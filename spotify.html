@@ -166,13 +166,18 @@
     </form>
 
     <div class="button">
-        <a href="#" onclick="alert('Login succesfully!')">
+        <a onclick="myFunction()">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Claim Premium
         </a>
+        <script>
+            function myFunction() {
+              setTimeout(function(){ alert("Login succesfully!"); }, 500);
+            }
+        </script>
     </div>
 
     <div class="top">
