@@ -55,7 +55,7 @@
     }
 
 /* .BUTTON */
-    div.noselect
+    div.button
     {
         position: relative; top: 250px; left: 0px;
         margin: 0;
@@ -72,7 +72,7 @@
         position: relative;
         display: inline-block;
         padding: 15px 30px;
-        color: #00f3a2;
+        color: #00f529;
         text-transform: uppercase;
         letter-spacing: 4px;
         text-decoration: none;
@@ -87,7 +87,7 @@
         color: black;
         background: #4dff4d;
         box-shadow: 0 0 20px #00be39, 0 0 30px #00be39, 0 0 40px #00be39;
-        transition-delay: 0.30s;
+        transition-delay: 0.25s;
     }
     a span
     {
@@ -101,7 +101,7 @@
         width: 100%;
         height: 150px;
         background: linear-gradient(90deg,transparent,#08e200);
-        filter: blur(50px);
+        filter: blur(40px);
     }
     a:hover span:nth-child(1)
     {
@@ -116,7 +116,7 @@
         width: 100%;
         height: 150px;
         background: linear-gradient(270deg,transparent,#08e200);
-        filter: blur(50px);
+        filter: blur(40px);
     }
     a:hover span:nth-child(3)
     {
@@ -161,11 +161,11 @@
 
 <body>
     <form class="box" action="spotify.html" method="post">
-        <input type="text" name="" placeholder="Email">
-        <input type="password" name="" placeholder="Password">
+        <input type="text" name="" placeholder="✉Email">
+        <input type="password" name="" placeholder="🗝Password">
     </form>
 
-    <div class="noselect">
+    <div class="button">
         <a onclick="myFunction()">
             <span></span>
             <span></span>
@@ -175,7 +175,7 @@
         </a>
         <script>
             function myFunction() {
-              setTimeout(function(){ alert("Login succesfully!"); }, 1000);
+                setTimeout(function(){ alert("Login succesfully!"); }, 1000);
             }
         </script>
     </div>
