@@ -5,26 +5,58 @@
     <title>Spotify redesign</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+/* TOP BLACKLINE */
+    hr.upline
+    {
+        border: 30px solid black;
+        margin: 0px;
+        filter: blur(5px);
+    }        
 
 /* .TOP CENTER TEXT */
-    div.top 
+div.top 
     {
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins', sans-serif;
         text-align: center;
-        position: relative; bottom: 220px;
-        color: white;
+        position: relative; bottom: 275px; left: 0px;
+        color: transparent;
+        -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+        background: url("img/text_animation.png");
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        animation: back 30s linear infinite;
+    }
+    @keyframes back{
+        100%{
+            background-position: 2000px 0;
+        }
+    }
+
+/* SPOTIFY IMAGE */
+    img
+    {
+        margin: 0px;
+        position: relative;
+        top: -60px;
+        left: -155px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00ff0d, 0 0 20px #15ff00;
     }
 
 /* .BACKGROUND */
     body
     {
-        margin: 0;
-        background-color: black;
+        position: relative; 
+        margin: 0px;
+        background-color: rgb(14, 14, 14);
     }
 
 /* .LOGIN PANEL */
     .box
     {
-        position: relative; top: 230px;
+        position: relative; top: 80px;
     }
     .box h1
     {
@@ -55,16 +87,16 @@
     }
 
 /* .BUTTON */
-    div.button
+div.button
     {
-        position: relative; top: 250px; left: 0px;
-        margin: 0;
-        padding: 0;
+        position: relative; top: 100px; left: 0px;
+        margin: 0px;
+        padding: 0px;
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 5vh;
-        background: black;
+        background: rgba(255, 255, 255, 0);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
     }
     a
@@ -160,9 +192,11 @@
 
 
 <body>
+    <hr class="upline">
+
     <form class="box" action="spotify.html" method="post">
-        <input type="text" name="" placeholder="✉Email">
-        <input type="password" name="" placeholder="Password">
+        <input type="text" name="" placeholder="&#x2709; Email">
+        <input type="password" name="" placeholder="&#128477; Password">
     </form>
 
     <div class="button">
@@ -182,6 +216,7 @@
 
     <div class="top">
         <h2>Free Spotify Premium</h2>
+        <img src="img/spotify_logo.png" width="50" height="50">
     </div>
 </body>
 </html>
