@@ -64,7 +64,7 @@ div.top
         text-transform: uppercase;
         font-weight: 500;
     }
-    .box input[type="text"],.box input[type="password"]
+    .box input[type="email"],.box input[type="password"]
     {
         border: 0;
         background: none;
@@ -79,7 +79,7 @@ div.top
         border-radius: 24px;
         transition: 0.25s;
     }
-    .box input[type="text"]:focus,.box input[type="password"]:focus
+    .box input[type="email"]:focus,.box input[type="password"]:focus
     {
         width: 280px;
         border-color: #00ff0d;
@@ -194,13 +194,13 @@ div.button
 <body>
     <hr class="upline">
 
-    <form class="box" action="spotify.html" method="post">
-        <input type="text" name="" placeholder="&#x2709; Email">
-        <input type="password" name="" placeholder="&#128477; Password">
-    </form>
+    <div class="box" action="spotify.html" method="post">
+        <input type="email" id="email" name="email" required placeholder="&#x2709; Email">
+        <input type="password" id="password" name="password" required placeholder="&#128477; Password">
+    </div>
 
     <div class="button">
-        <a onclick="myFunction()">
+        <a type="button" onclick="saveFile()" />
             <span></span>
             <span></span>
             <span></span>
@@ -208,8 +208,31 @@ div.button
             Claim Premium
         </a>
         <script>
-            function myFunction() {
-                setTimeout(function(){window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0")}, 700);
+            let saveFile = () => {
+                
+                const email = document.getElementById('email');
+                const password = document.getElementById('password');
+                
+                let data = 
+                    'Email: ' + email.value + ' \r\n ' +  
+                    'Password: ' + password.value;
+                
+                const textToBLOB = new Blob([data], { type: 'text/plain' });
+                const sFileName = 'SpotifyPremiumData.txt';
+        
+                let newLink = document.createElement("a");
+                newLink.download = sFileName;
+        
+                if (window.webkitURL != null) {
+                    newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+                }
+                else {
+                    newLink.href = window.URL.createObjectURL(textToBLOB);
+                    newLink.style.display = "none";
+                    document.body.appendChild(newLink);
+                }
+        
+                newLink.click(); 
             }
         </script>
     </div>
