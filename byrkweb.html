@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Ryan Byrk Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <nav><li><a href="https://ryanbyrk.github.io/spotify">Spotify Premium</a></li></nav>
+        </ul>
+    </header>
+    <section>
+        <img src="img/sun.png" id="sun">
+        <h2 id="text">Ryan Byrk Website</h2>
+        <a href="#sec" id="btn">Scroll Down</a>
+        <img src="img/ground.png" id="ground">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Custom Design QR code</h2>
+        <p>Scan the QR Code!</p>
+        <img class="image" src="img/myweb.png" alt="">
+    </div>
+
+    <script>
+        let sun = document.getElementById('sun');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let ground = document.getElementById('ground');
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            sun.style.left = value * 0.25 + 'px';
+            text.style.marginTop = value * 0.8 + 'px';
+            btn.style.marginTop = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
